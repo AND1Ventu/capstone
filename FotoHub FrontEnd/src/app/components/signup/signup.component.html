@@ -1,0 +1,46 @@
+<div class="container h-100 d-flex justify-content-center align-items-center">
+
+  <form [formGroup]="user" class="w-50 p-5 rounded-3" (ngSubmit)="submitForm(user)">
+    <div class="row">
+      <div class="col-12 mb-6">
+        <label for="nome" class="form-label">Nome</label>
+        <input formControlName="nome" type="text" class="form-control" id="nome">
+      </div>
+      <div class="col-12 mb-6">
+        <label for="cognome" class="form-label">Cognome</label>
+        <input formControlName="cognome" type="text" class="form-control" id="cognome">
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-12">
+        <div class="mb-6">
+          <label for="password" class="form-label">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="password">
+        </div>
+        <div class="mb-6 position-relative">
+          <label for="passwordConf" class="form-label">Conferma password </label>
+          <input formControlName="passwordConf" type="password" class="form-control" id="passwordConf">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input formControlName="email" type="text" class="form-control" aria-label="email" id="email"
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea formControlName="bio" class="form-control" placeholder="Su di te..." id="bio"
+        style="height: 100px"></textarea>
+      <label for="bio">Biografia</label>
+      <p class="text-end">{{user.controls['bio'].value.length}}/100</p>
+    </div>
+    <button  type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

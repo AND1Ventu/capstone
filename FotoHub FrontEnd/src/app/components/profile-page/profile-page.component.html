@@ -1,0 +1,40 @@
+<div class="container">
+  <div *ngIf="user" class="card user-info">
+    <div class="card-body">
+      <h5 class="card-title">{{ user.nome }} {{ user.cognome }}</h5>
+      <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+      <p class="card-text"><strong>Bio:</strong> {{ user.bio }}</p>
+    </div>
+  </div>
+
+
+  <div class="search-bar mt-4">
+    <input type="text" class="form-control" placeholder="Search...">
+    <!-- Add functionality to search users and photos -->
+  </div>
+  <div class="d-flex justify-content-center mt-4">
+    <div class="input-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile" (change)="addPhoto($event)">
+      </div>
+    </div>
+  </div>
+
+
+    <!-- User Gallery Card -->
+    <div class="user-gallery mt-4">
+      <h2>User Gallery</h2>
+      <app-gallery [userPhotos]="userPhotos"></app-gallery>
+    </div>
+
+
+    <!-- Discovery Section Card -->
+    <div class="card mt-4" >
+      <div class="card-body">
+        <h5 class="card-title">Discovery Section</h5>
+        <p class="card-text">Discover new photos and users.</p>
+        <button class="btn btn-primary" routerLink="/discover">Discover</button>
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+<div *ngIf="!foto" class="alert alert-info">
+  Caricamento in corso
+</div>
+<form *ngIf="foto">
+  <input type="text" required placeholder="Nome" [(ngModel)]="foto.nome" name="nome" class="form-control">
+  <input type="number" placeholder="Valutazione" [(ngModel)]="foto.valutazione" name="valutazione" class="form-control">
+  <select name="active" [(ngModel)]="foto.active" class="form-control">
+    <option value="1">Active</option>
+    <option value="0">Not active</option>
+  </select>
+  <button (click)="save()" class="btn btn-success">Salva</button>
+</form>

@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+body {
+  background-color: rgb(255, 242, 225);
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Importing Bootstrap SCSS file. */

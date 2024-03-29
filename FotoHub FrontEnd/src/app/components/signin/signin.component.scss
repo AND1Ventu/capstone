@@ -1,0 +1,28 @@
+:host {
+  width: 100%;
+  height: 100vh;
+  display: block;
+
+  form {
+    background-color: white;
+    input {
+      border: none;
+      background-color: #fff2e1;
+      &:focus,
+      &:active {
+        box-shadow: unset;
+      }
+    }
+    .mb-3 {
+      width: 100%;
+    }
+    span.input-group-text {
+      background-color: #ffcb87;
+    }
+
+    button.btn {
+      background-color: #ff9100;
+      border-color: #ffcb87;
+    }
+  }
+}

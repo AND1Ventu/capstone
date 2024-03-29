@@ -1,0 +1,21 @@
+<div class="container h-100 d-flex justify-content-center align-items-center">
+
+  <form #loginForm="ngForm" class="w-50 p-5 rounded-3" (submit)="submitLogin(loginForm)">
+    <div class="d-flex flex-column align-items-start justify-content-center">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group ">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input required ngModelGroup="credentials" [(ngModel)]="email" type="text" class="form-control"
+            aria-label="Email" name="email" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input required ngModelGroup="credentials" [(ngModel)]="password" type="password" class="form-control"
+          name="password">
+      </div>
+      <button class="btn w-100" [disabled]="loginForm.invalid">Login</button>
+    </div>
+  </form>
+</div>

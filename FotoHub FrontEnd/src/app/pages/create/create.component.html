@@ -1,0 +1,17 @@
+<form>
+  <input type="text" required placeholder="Nome" [(ngModel)]="newFoto.nome" name="nome" class="form-control">
+  <input type="number" placeholder="Valutazione" [(ngModel)]="newFoto.valutazione" name="valutazione" class="form-control">
+  <select name="active" [(ngModel)]="newFoto.active" class="form-control">
+    <option value="1">Active</option>
+    <option value="0">Not active</option>
+  </select>
+  <button (click)="save()" class="btn btn-success">Salva</button>
+</form>
+
+<div *ngIf="loading" class="alert alert-warning">
+  Salvataggio Foto in corso
+</div>
+
+<div *ngIf="oldFoto">
+    Hai creato la Foto {{oldFoto.nome}}
+</div>

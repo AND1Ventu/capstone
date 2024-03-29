@@ -1,0 +1,25 @@
+<div *ngIf="!fotos.length" class="alert alert-info">
+  Caricamento in corso
+</div>
+
+<table *ngIf="fotos.length" class="table">
+  <tr>
+    <th>#</th>
+    <th>Nome</th>
+    <th>Fotografo</th>
+    <th>Valutazione</th>
+    <th>Disponibile</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let f of fotos">
+    <td>{{f.id}}</td>
+    <td>{{f.nome}}</td>
+    <td>{{f.fotografo}}</td>
+    <td>{{f.valutazione}}</td>
+    <td>{{f.active}}</td>
+    <td>
+      <a [routerLink]="['/menu','edit',f.id]" class="btn btn-warning">Modifica</a>
+      <button (click)="delete(f.id)" class="btn btn-danger">Elimina</button>
+    </td>
+  </tr>
+</table>
